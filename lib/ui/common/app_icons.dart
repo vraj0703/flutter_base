@@ -3,6 +3,7 @@ import 'package:flutter_base/common_libs.dart';
 
 class AppIcon extends StatelessWidget {
   const AppIcon(this.icon, {super.key, this.size = 22, this.color});
+
   final AppIcons icon;
   final double size;
   final Color? color;
@@ -16,7 +17,10 @@ class AppIcon extends StatelessWidget {
       height: size,
       child: Center(
         child: Image.asset(path,
-            width: size, height: size, color: color ?? $styles.colors.offWhite, filterQuality: FilterQuality.high),
+            width: size,
+            height: size,
+            color: color ?? $styles.colors.offWhite,
+            filterQuality: FilterQuality.high),
       ),
     );
   }

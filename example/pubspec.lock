@@ -97,15 +97,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.2"
-  drop_cap_text:
-    dependency: transitive
-    description:
-      path: "."
-      ref: "feat/adapt-for-deprecations"
-      resolved-ref: f9829062aefa2bea73e7ece99bf850f5d43259cc
-      url: "https://github.com/parlough/drop_cap_text"
-    source: git
-    version: "1.2.0"
   equatable:
     dependency: transitive
     description:

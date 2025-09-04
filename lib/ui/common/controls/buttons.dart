@@ -3,8 +3,11 @@ import 'package:flutter_base/ui/common/app_icons.dart';
 import 'package:flutter_base/ui/common/ignore_pointer.dart';
 
 /// Shared methods across button types
-Widget _buildIcon(BuildContext context, AppIcons icon, {required bool isSecondary, required double? size}) =>
-    AppIcon(icon, color: isSecondary ? $styles.colors.black : $styles.colors.offWhite, size: size ?? 18);
+Widget _buildIcon(BuildContext context, AppIcons icon,
+        {required bool isSecondary, required double? size}) =>
+    AppIcon(icon,
+        color: isSecondary ? $styles.colors.black : $styles.colors.offWhite,
+        size: size ?? 18);
 
 /// The core button that drives all other buttons.
 class AppBtn extends StatelessWidget {
@@ -55,8 +58,12 @@ class AppBtn extends StatelessWidget {
       Text? txt = text == null
           ? null
           : Text(text.toUpperCase(),
-              style: $styles.text.btn, textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false));
-      Widget? icn = icon == null ? null : _buildIcon(context, icon, isSecondary: isSecondary, size: iconSize);
+              style: $styles.text.btn,
+              textHeightBehavior:
+                  TextHeightBehavior(applyHeightToFirstAscent: false));
+      Widget? icn = icon == null
+          ? null
+          : _buildIcon(context, icon, isSecondary: isSecondary, size: iconSize);
       if (txt != null && icn != null) {
         return Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -113,7 +120,8 @@ class AppBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color defaultColor = isSecondary ? $styles.colors.white : $styles.colors.greyStrong;
+    Color defaultColor =
+        isSecondary ? $styles.colors.white : $styles.colors.greyStrong;
     Color textColor = isSecondary ? $styles.colors.black : $styles.colors.white;
     BorderSide side = border ?? BorderSide.none;
 
@@ -122,16 +130,21 @@ class AppBtn extends StatelessWidget {
 
     OutlinedBorder shape = circular
         ? CircleBorder(side: side)
-        : RoundedRectangleBorder(side: side, borderRadius: BorderRadius.circular($styles.corners.md));
+        : RoundedRectangleBorder(
+            side: side,
+            borderRadius: BorderRadius.circular($styles.corners.md));
 
     ButtonStyle style = ButtonStyle(
       minimumSize: ButtonStyleButton.allOrNull<Size>(minimumSize ?? Size.zero),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       splashFactory: NoSplash.splashFactory,
-      backgroundColor: ButtonStyleButton.allOrNull<Color>(bgColor ?? defaultColor),
-      overlayColor: ButtonStyleButton.allOrNull<Color>(Colors.transparent), // disable default press effect
+      backgroundColor:
+          ButtonStyleButton.allOrNull<Color>(bgColor ?? defaultColor),
+      overlayColor: ButtonStyleButton.allOrNull<Color>(Colors.transparent),
+      // disable default press effect
       shape: ButtonStyleButton.allOrNull<OutlinedBorder>(shape),
-      padding: ButtonStyleButton.allOrNull<EdgeInsetsGeometry>(padding ?? EdgeInsets.all($styles.insets.md)),
+      padding: ButtonStyleButton.allOrNull<EdgeInsetsGeometry>(
+          padding ?? EdgeInsets.all($styles.insets.md)),
 
       enableFeedback: enableFeedback,
     );
@@ -148,7 +161,9 @@ class AppBtn extends StatelessWidget {
               style: style,
               focusNode: focus,
               child: DefaultTextStyle(
-                style: DefaultTextStyle.of(context).style.copyWith(color: textColor),
+                style: DefaultTextStyle.of(context)
+                    .style
+                    .copyWith(color: textColor),
                 child: content,
               ),
             ),
@@ -159,7 +174,8 @@ class AppBtn extends StatelessWidget {
                 child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular($styles.corners.md),
-                        border: Border.all(color: $styles.colors.accent1, width: 3))),
+                        border: Border.all(
+                            color: $styles.colors.accent1, width: 3))),
               ),
             )
         ],
@@ -186,6 +202,7 @@ class AppBtn extends StatelessWidget {
 /// //////////////////////////////////////////////////
 class _ButtonPressEffect extends StatefulWidget {
   const _ButtonPressEffect(this.child);
+
   final Widget child;
 
   @override
@@ -200,7 +217,8 @@ class _ButtonPressEffectState extends State<_ButtonPressEffect> {
     return GestureDetector(
       excludeFromSemantics: true,
       onTapDown: (_) => setState(() => _isDown = true),
-      onTapUp: (_) => setState(() => _isDown = false), // not called, TextButton swallows this.
+      onTapUp: (_) => setState(() => _isDown = false),
+      // not called, TextButton swallows this.
       onTapCancel: () => setState(() => _isDown = false),
       behavior: HitTestBehavior.translucent,
       child: Opacity(
@@ -212,10 +230,13 @@ class _ButtonPressEffectState extends State<_ButtonPressEffect> {
 }
 
 class _CustomFocusBuilder extends StatefulWidget {
-  const _CustomFocusBuilder({required this.builder, this.focusNode, this.onFocusChanged});
+  const _CustomFocusBuilder(
+      {required this.builder, this.focusNode, this.onFocusChanged});
+
   final Widget Function(BuildContext context, FocusNode focus) builder;
   final void Function(bool hasFocus)? onFocusChanged;
   final FocusNode? focusNode;
+
   @override
   State<_CustomFocusBuilder> createState() => _CustomFocusBuilderState();
 }

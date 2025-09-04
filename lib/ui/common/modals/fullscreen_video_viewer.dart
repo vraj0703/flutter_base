@@ -6,6 +6,7 @@ import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class FullscreenVideoViewer extends StatefulWidget {
   const FullscreenVideoViewer({super.key, required this.id});
+
   final String id;
 
   @override
@@ -54,7 +55,8 @@ class _FullscreenVideoViewerState extends State<FullscreenVideoViewer> {
 
   @override
   Widget build(BuildContext context) {
-    double aspect = context.isLandscape ? MediaQuery.of(context).size.aspectRatio : 9 / 9;
+    double aspect =
+        context.isLandscape ? MediaQuery.of(context).size.aspectRatio : 9 / 9;
     return Scaffold(
       backgroundColor: Colors.black,
       body: Stack(

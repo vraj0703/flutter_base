@@ -18,11 +18,13 @@ class AppBackdrop extends StatelessWidget {
     var useBlurs = false;
     if (useBlurs) {
       return BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: normalStrength * 15, sigmaY: normalStrength * 15),
+        filter: ImageFilter.blur(
+            sigmaX: normalStrength * 15, sigmaY: normalStrength * 15),
         child: child ?? SizedBox.expand(),
       );
     }
-    final fill = Container(color: $styles.colors.black.withOpacity(.8 * strength));
+    final fill =
+        Container(color: $styles.colors.black.withOpacity(.8 * strength));
     return child == null
         ? fill
         : Stack(

@@ -1,5 +1,4 @@
 import 'package:flutter_base/common_libs.dart';
-import 'package:flutter_base/flutter_base.dart';
 
 // ignore: must_be_immutable
 class NeverAnimate extends Animate {

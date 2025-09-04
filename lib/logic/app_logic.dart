@@ -3,7 +3,6 @@ import 'dart:ui';
 
 import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_base/flutter_base.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:flutter_base/common_libs.dart';
 import 'package:flutter_base/logic/common/platform_info.dart';

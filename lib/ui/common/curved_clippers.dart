@@ -4,6 +4,7 @@ enum ArchType { spade, pyramid, arch, wideArch, flatPyramid }
 
 class ArchClipper extends CustomClipper<Path> {
   ArchClipper(this.type);
+
   final ArchType type;
 
   @override
@@ -20,13 +21,15 @@ class ArchClipper extends CustomClipper<Path> {
   }
 
   @override
-  bool shouldReclip(covariant ArchClipper oldClipper) => oldClipper.type != type;
+  bool shouldReclip(covariant ArchClipper oldClipper) =>
+      oldClipper.type != type;
 }
 
 class ArchPoint {
   ArchPoint(this.pos, [Offset? control]) {
     this.control = control ?? pos;
   }
+
   final Offset pos;
   late final Offset control;
 
@@ -52,7 +55,8 @@ List<ArchPoint> _getArchPts(Size size, ArchType type) {
         ArchPoint(Offset(0, size.height)),
         ArchPoint(Offset(0, distanceFromTop)),
         ArchPoint(Offset(size.width / 2, 0), Offset(0, distanceFromTop * .66)),
-        ArchPoint(Offset(size.width, distanceFromTop), Offset(size.width, distanceFromTop * .66)),
+        ArchPoint(Offset(size.width, distanceFromTop),
+            Offset(size.width, distanceFromTop * .66)),
         ArchPoint(Offset(size.width, size.height)),
       ],
     ArchType.arch => [
@@ -84,6 +88,7 @@ List<ArchPoint> _getArchPts(Size size, ArchType type) {
 
 class CurvedTopClipper extends CustomClipper<Path> {
   CurvedTopClipper({this.flip = false});
+
   final bool flip;
 
   @override
