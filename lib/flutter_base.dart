@@ -15,10 +15,8 @@ class FlutterBase {
   /// This method should be called once during app startup, typically in `main.dart`.
   /// It registers [AppLocalizations] and [AppStyle] with GetIt for global access.
   static Future<void> initialize({
-    required AppLocalizations localizations,
     required AppStyle style,
   }) async {
-    GetIt.I.registerSingleton<AppLocalizations>(localizations);
     GetIt.I.registerSingleton<AppStyle>(style);
   }
 
