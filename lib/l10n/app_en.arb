@@ -429,5 +429,6 @@
 	"privacyStatement": "As explained in our {privacyUrl} we do not collect any personal information.",
 	"@privacyStatement": {"placeholders": {"privacyUrl": {}}},
 	"pageNotFoundBackButton": "Back to civilization",
-	"pageNotFoundMessage": "The page you are looking for does not exist."
+	"pageNotFoundMessage": "The page you are looking for does not exist.",
+	"pageNotFound": "Page not found."
 }
