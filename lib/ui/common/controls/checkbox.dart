@@ -1,5 +1,4 @@
 import 'package:flutter_base/common_libs.dart';
-import 'package:flutter_base/ui/common/utils/app_haptics.dart';
 
 class SimpleCheckbox extends StatelessWidget {
   const SimpleCheckbox(

@@ -5,9 +5,7 @@ import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:flutter_base/common_libs.dart';
-import 'package:flutter_base/logic/common/platform_info.dart';
 import 'package:flutter_base/ui/common/modals/fullscreen_video_viewer.dart';
-import 'package:flutter_base/ui/common/utils/page_routes.dart';
 
 class AppLogic {
   Size _appSize = Size.zero;
@@ -52,9 +50,6 @@ class AppLogic {
     if (!kIsWeb && PlatformInfo.isAndroid) {
       await FlutterDisplayMode.setHighRefreshRate();
     }
-
-    // Localizations
-    await localeLogic.load();
 
     // Wait at least 1 frame to give GoRouter time to catch the initial deeplink
     await Future.delayed(1.milliseconds);

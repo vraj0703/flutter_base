@@ -11,7 +11,7 @@ class AppPageIndicator extends StatefulWidget {
     this.dotSize,
     String? semanticPageTitle,
   }) : semanticPageTitle =
-            semanticPageTitle ?? $strings.appPageDefaultTitlePage;
+            semanticPageTitle ?? $strings.page;
   final int count;
   final PageController controller;
   final void Function(int index)? onDotPressed;

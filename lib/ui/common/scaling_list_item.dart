@@ -1,5 +1,4 @@
 import 'package:flutter_base/common_libs.dart';
-import 'package:flutter_base/ui/common/utils/context_utils.dart';
 
 class AnimatedListItem extends StatelessWidget {
   const AnimatedListItem({super.key, required this.scrollPos, required this.builder});

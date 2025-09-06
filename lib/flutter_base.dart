@@ -1,9 +1,8 @@
-import 'package:flutter_base/styles/styles.dart';
 import 'package:get_it/get_it.dart';
+import 'package:my_localizations/library.dart';
+import 'package:my_theme_style/styles/styles.dart' show AppStyle;
 
 import 'flutter_base_platform_interface.dart';
-import 'l10n/app_localizations.dart';
-import 'logic/locale_logic.dart';
 
 /// A Flutter plugin that initializes with AppLocalizations and AppStyle.
 ///
@@ -24,8 +23,6 @@ class FlutterBase {
     return FlutterBasePlatform.instance.getPlatformVersion();
   }
 }
-
-LocaleLogic get localeLogic => GetIt.I.get<LocaleLogic>();
 
 /// Global helpers for readability
 AppLocalizations get $strings => GetIt.I.get<AppLocalizations>();

@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'package:flutter_base/common_libs.dart';
-import 'package:flutter_base/logic/common/platform_info.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class FullscreenVideoViewer extends StatefulWidget {

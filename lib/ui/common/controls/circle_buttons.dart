@@ -106,7 +106,7 @@ class BackBtn extends StatelessWidget {
             key: key,
             icon: AppIcons.close,
             onPressed: onPressed,
-            semanticLabel: $strings.circleButtonsSemanticClose,
+            semanticLabel: $strings.close,
             bgColor: bgColor,
             iconColor: iconColor);
 
@@ -135,7 +135,7 @@ class BackBtn extends StatelessWidget {
                 // navigate to home
               }
             },
-        semanticLabel: semanticLabel ?? $strings.circleButtonsSemanticBack,
+        semanticLabel: semanticLabel ?? $strings.back,
       ),
     );
   }

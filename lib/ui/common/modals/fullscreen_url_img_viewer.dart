@@ -4,7 +4,6 @@ import 'package:flutter_base/common_libs.dart';
 import 'package:flutter_base/ui/common/app_icons.dart';
 import 'package:flutter_base/ui/common/controls/app_header.dart';
 import 'package:flutter_base/ui/common/fullscreen_keyboard_listener.dart';
-import 'package:flutter_base/ui/common/utils/app_haptics.dart';
 
 class FullscreenUrlImgViewer extends StatefulWidget {
   const FullscreenUrlImgViewer({super.key, required this.urls, this.index = 0});

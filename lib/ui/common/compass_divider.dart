@@ -1,5 +1,4 @@
 import 'package:flutter_base/common_libs.dart';
-import 'package:flutter_base/ui/common/utils/duration_utils.dart';
 
 class CompassDivider extends StatelessWidget {
   const CompassDivider(

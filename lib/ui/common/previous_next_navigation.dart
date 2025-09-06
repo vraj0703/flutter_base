@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter_base/common_libs.dart';
-import 'package:flutter_base/logic/common/platform_info.dart';
 import 'package:flutter_base/ui/common/app_icons.dart';
 import 'package:flutter_base/ui/common/fullscreen_keyboard_listener.dart';
 
